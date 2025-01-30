@@ -1,45 +1,61 @@
-Federated learning, a decentralized
-model training paradigm, is implemented using the
-Flower framework in this research. The study
-focuses on predicting heart disease collaboratively
-across multiple clients while preserving data
-privacy. A custom neural network model is trained
-on clients, and the federated learning strategy of
-Flower facilitates model updates aggregation. The
-experiments showcase the effectiveness of
-collaborative model training, emphasizing data
-privacy preservation and reduced communication
-overhead. The results contribute to the growing
-field of federated learning applications and
-highlight the unique features of the Flower
-framework.
+Federated Learning for Heart Disease Prediction
 
-Prerequisites
-Before running this project, ensure you have the following dependencies installed:
+Overview
 
-Flower
-TensorFlow
-Pandas
-Keras
+This project applies Federated Learning (FL) to heart disease prediction using the FLWR (Flower) framework. Federated Learning enables decentralized training of machine learning models without sharing raw data, ensuring privacy and security. The model is trained across multiple simulated clients using the FedAvg (Federated Averaging) strategy.
 
+Features
 
-How to Run
-Server Setup: Open a terminal and run the following command to start the server:
+Privacy-Preserving Model Training: Uses federated learning to keep sensitive health data on local devices.
 
-python server.py 5000
-Replace 5000 with your desired port number if necessary.
+Decentralized Training: Data remains distributed across multiple simulated clients.
 
-Client Setup: Open new terminals for each client you want to run. In each terminal, run the following command to start a client:
-python client.py 5000
-Again, replace 5000 with the same port number used for the server if you changed it.
+Federated Averaging: Aggregates model updates from clients without exchanging raw data.
 
-Accessing the Interface: Once the server and clients are connected successfully, open a web browser and navigate to http://localhost:8000. You will see the user interface.
+Heart Disease Prediction: Utilizes patient health data to predict the likelihood of heart disease.
 
-Running Federated Learning (FL):
+Dataset
 
-On the interface, there will be a button to start FL. Click on it to initiate the federated learning process.
-After the FL completion, you can click on the "Check Results" button.
-Form Submission:
+The dataset used includes the following features:
 
-Fill out the form with the required details.
-Submit the form to get the results.
+age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal, target
+
+The target column indicates whether a patient has heart disease (1) or not (0).
+
+Technologies Used
+
+Python
+
+FLWR (Flower Framework)
+
+TensorFlow/PyTorch (for model training)
+
+NumPy & Pandas (data processing)
+
+Scikit-learn (data preprocessing and evaluation)
+
+Installation
+
+Clone the repository:
+
+git clone https://github.com/your-username/federated-heart-disease.git
+cd federated-heart-disease
+
+Install dependencies:
+
+pip install -r requirements.txt
+
+Usage
+
+Start the FL server:
+
+python server.py
+
+Start FL clients (in separate terminals):
+
+python client.py
+
+Monitor training logs to track model performance.
+
+Model Training Process
+
